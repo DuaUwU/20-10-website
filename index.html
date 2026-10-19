@@ -99,39 +99,7 @@
 .d6{right:3%;top:43%;width:clamp(68px,18vw,92px);animation-delay:-4.1s;filter:drop-shadow(0 8px 8px #b35d8030)}
 @media(max-width:600px){#intro{perspective:760px}.d5{top:25%;left:1%}.d6{top:54%;right:0}.d1{top:8%}.d2{bottom:9%}#intro .garden-flower{filter:drop-shadow(0 2px 3px #b95b8825)}}
 @media(prefers-reduced-motion:reduce){#intro .garden-flower,#intro .garden-hill,#intro .garden-moon,#intro .garden-glow{animation:none!important;transform:none!important} .deco{animation:none!important}}
-</style>
-
-<style id="magic-garden-v114">
-#magic-garden{position:fixed;inset:0;z-index:40;pointer-events:none;overflow:hidden;perspective:900px;isolation:isolate}
-#magic-garden .mood-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,222,240,.06),rgba(255,193,224,.10));transition:background 2s ease;}
-body.magic-night #magic-garden .mood-wash{background:linear-gradient(180deg,rgba(20,25,72,.30),rgba(67,38,105,.18));}
-#magic-garden .firefly{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff6a1;box-shadow:0 0 8px 3px #fff6a188,0 0 18px 5px #ffdc7c55;animation:fireflyFloat var(--dur,5s) ease-in-out infinite alternate;opacity:.8}
-@keyframes fireflyFloat{0%{transform:translate3d(0,0,0) scale(.6);opacity:.18}50%{opacity:1}100%{transform:translate3d(var(--dx,20px),-35px,25px) scale(1.25);opacity:.65}}
-#magic-garden .butterfly{position:absolute;font-size:clamp(17px,3vw,27px);filter:drop-shadow(0 3px 4px #a24d9a44);animation:butterflyFlight var(--dur,13s) linear infinite;transform-style:preserve-3d}
-@keyframes butterflyFlight{0%{transform:translate3d(-10vw,0,0) rotate(-12deg) scale(.8)}25%{transform:translate3d(25vw,-55px,35px) rotate(12deg) scale(1)}50%{transform:translate3d(55vw,15px,65px) rotate(-8deg) scale(.85)}75%{transform:translate3d(80vw,-65px,25px) rotate(10deg) scale(1.1)}100%{transform:translate3d(115vw,-10px,0) rotate(-10deg) scale(.8)}}
-#magic-garden .bloom{position:fixed;z-index:75;pointer-events:none;font-size:30px;transform:translate(-50%,-50%) scale(.1) rotate(-35deg);animation:bloomPop 1.5s cubic-bezier(.2,.8,.2,1) forwards;filter:drop-shadow(0 3px 5px #e85b9d55)}
-@keyframes bloomPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.1) rotate(-35deg)}35%{opacity:1;transform:translate(-50%,-65%) scale(1.35) rotate(12deg)}70%{opacity:1;transform:translate(-50%,-95%) scale(1) rotate(-7deg)}100%{opacity:0;transform:translate(-50%,-145%) scale(.7) rotate(20deg)}}
-#magic-pals{position:fixed;z-index:65;bottom:max(10px,env(safe-area-inset-bottom));left:0;right:0;display:flex;justify-content:space-between;align-items:flex-end;padding:0 clamp(8px,3vw,30px);pointer-events:none;transform:translateZ(30px)}
-.magic-pal{pointer-events:auto;border:0;background:rgba(255,245,251,.78);backdrop-filter:blur(8px);border:1px solid #fff9;border-radius:48% 48% 38% 38%;box-shadow:0 8px 22px #a64c7b25;padding:7px 9px 5px;min-width:62px;cursor:pointer;touch-action:manipulation;animation:palBob 3.1s ease-in-out infinite;transition:transform .2s;}
-.magic-pal:nth-child(2){animation-delay:-.8s}.magic-pal:nth-child(3){animation-delay:-1.6s}.magic-pal:nth-child(4){animation-delay:-.4s}
-.magic-pal .pal-face{display:block;font-size:clamp(29px,5vw,43px);line-height:1.05;filter:drop-shadow(0 3px 2px #7d365522)}
-.magic-pal .pal-name{display:block;font-size:10px;color:#99517b;font-weight:700;margin-top:2px}
-.magic-pal:active{transform:scale(1.18) rotate(-5deg)}
-@keyframes palBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
-#magic-controls{position:fixed;z-index:90;right:10px;top:max(10px,env(safe-area-inset-top));display:flex;gap:7px;flex-direction:column;align-items:flex-end}
-.magic-control{border:1px solid #fff;background:rgba(255,246,251,.88);color:#a13f79;border-radius:22px;padding:9px 12px;font:600 12px/1.2 system-ui,sans-serif;box-shadow:0 4px 14px #7c38651f;cursor:pointer;backdrop-filter:blur(8px);touch-action:manipulation}
-#magic-ending{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:22px;background:radial-gradient(circle at 50% 35%,#fff2f8f5,#f4a6d8ed 70%,#9c72bded);text-align:center;overflow:hidden}
-#magic-ending.open{display:grid;animation:endingFade .7s ease both}
-#magic-ending .ending-card{position:relative;max-width:560px;width:min(100%,560px);padding:clamp(24px,6vw,48px) 22px;border:1px solid #fff9;border-radius:30px;background:#fff5f4d9;box-shadow:0 22px 70px #67365c40;animation:endingRise 1s cubic-bezier(.2,.8,.2,1) both}
-#magic-ending h2{font-family:Georgia,serif;font-size:clamp(27px,6vw,42px);color:#b44f87;margin:0 0 14px}
-#magic-ending p{font-size:clamp(15px,3vw,18px);line-height:1.8;color:#784665}
-#magic-ending .ending-sparkles{font-size:clamp(25px,6vw,42px);letter-spacing:8px;animation:sparklePulse 2s ease-in-out infinite}
-@keyframes endingFade{from{opacity:0}to{opacity:1}}@keyframes endingRise{from{transform:translateY(25px) scale(.95);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}@keyframes sparklePulse{50%{transform:scale(1.08);filter:drop-shadow(0 0 12px #fff)}}
-@media(max-width:520px){#magic-pals{padding:0 5px}.magic-pal{min-width:48px;padding:5px 6px}.magic-pal .pal-face{font-size:29px}.magic-pal .pal-name{font-size:9px}#magic-controls{top:auto;bottom:88px;right:7px}.magic-control{padding:8px 10px;font-size:11px}}
-@media(prefers-reduced-motion:reduce){#magic-garden *,#magic-pals *{animation-duration:12s!important;scroll-behavior:auto!important}}
-</style>
-
-</head><body>
+</style></head><body>
 <title>Hoa tặng 20/10 — v11</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -888,35 +856,6 @@ canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
     if(e.target.closest('input,label'))return;
     sfx('tap');burst(e.clientX,e.clientY,10,3.5);
   });
-})();
-</script>
-
-
-<div id="magic-garden" aria-hidden="true"><div class="mood-wash"></div>
-  <span class="butterfly" style="top:17%;--dur:17s;animation-delay:-7s">🎵</span><span class="butterfly" style="top:38%;--dur:21s;animation-delay:-13s">🎵</span><span class="butterfly" style="top:62%;--dur:19s;animation-delay:-4s">🎵</span>
-</div>
-<div id="magic-pals" aria-label="Những người bạn thú bông dễ thương">
- <button class="magic-pal" data-pal="bear" aria-label="Chạm gấu bông"><span class="pal-face">🧸</span><span class="pal-name">Gấu Bông</span></button>
- <button class="magic-pal" data-pal="bunny" aria-label="Chạm thỏ bông"><span class="pal-face">🐰</span><span class="pal-name">Thỏ Nhỏ</span></button>
- <button class="magic-pal" data-pal="puppy" aria-label="Chạm cún bông"><span class="pal-face">🐶</span><span class="pal-name">Cún Con</span></button>
- <button class="magic-pal" data-pal="kitty" aria-label="Chạm mèo bông"><span class="pal-face">🐱</span><span class="pal-name">Mèo Mun</span></button>
-</div>
-<div id="magic-controls"><button class="magic-control" id="magic-daynight">🌙 Bật chế độ đêm</button><button class="magic-control" id="magic-finale">💗 Món quà cuối</button></div>
-<div id="magic-ending" role="dialog" aria-modal="true" aria-labelledby="magic-ending-title">
- <div class="ending-card"><div class="ending-sparkles">🌸 ✨ 💗 ✨ 🌸</div><h2 id="magic-ending-title">Gửi bạn một vườn hoa yêu thương</h2><p>Chúc bạn luôn được dịu dàng đối xử, luôn có thật nhiều lý do để mỉm cười và mỗi ngày đều tìm thấy một điều nhỏ xinh khiến trái tim ấm áp. 💗</p><p>Mong những điều tốt đẹp nhất sẽ nở hoa trong cuộc sống của bạn — hôm nay, ngày mai và cả những ngày sau nữa.</p><div class="ending-sparkles">🎵 🌷 🧸 🌷 🎵</div><button class="magic-control" id="magic-close-finale">🌷 Trở lại khu vườn</button></div>
-</div>
-<script id="magic-garden-v114-js">
-(function(){
- 'use strict';
- var garden=document.getElementById('magic-garden'); if(!garden)return;
- // Decorative fireflies are lightweight CSS elements; the existing embedded music is untouched.
- for(var i=0;i<18;i++){var f=document.createElement('i');f.className='firefly';f.style.left=(4+Math.random()*92)+'%';f.style.top=(8+Math.random()*82)+'%';f.style.setProperty('--dur',(3.5+Math.random()*5)+'s');f.style.setProperty('--dx',(-25+Math.random()*50)+'px');f.style.animationDelay=(-Math.random()*7)+'s';garden.appendChild(f)}
- var faces={bear:['🧸','🥰','😴','💖'],bunny:['🐰','🐇','🥹','🌸'],puppy:['🐶','🐕','😍','💗'],kitty:['🐱','😺','😽','✨']};
- document.querySelectorAll('.magic-pal').forEach(function(btn){var face=btn.querySelector('.pal-face'),name=btn.querySelector('.pal-name'),key=btn.dataset.pal,n=0;btn.addEventListener('click',function(){n=(n+1)%faces[key].length;face.textContent=faces[key][n];btn.animate([{transform:'translateY(0) scale(1)'},{transform:'translateY(-17px) scale(1.18) rotate(-7deg)'},{transform:'translateY(0) scale(1)'}],{duration:560,easing:'cubic-bezier(.2,.8,.2,1)'});name.textContent=['Gấu Bông','Thỏ Nhỏ','Cún Con','Mèo Mun'][['bear','bunny','puppy','kitty'].indexOf(key)];var heart=document.createElement('span');heart.className='bloom';heart.textContent=['💗','✨','🌸','💕'][Math.floor(Math.random()*4)];var r=btn.getBoundingClientRect();heart.style.left=(r.left+r.width/2)+'px';heart.style.top=(r.top+5)+'px';document.body.appendChild(heart);setTimeout(function(){heart.remove()},1600)})});
- function bloom(x,y){var b=document.createElement('span');b.className='bloom';b.textContent=['🌸','🌷','🌼','💮','💖','✨'][Math.floor(Math.random()*6)];b.style.left=x+'px';b.style.top=y+'px';document.body.appendChild(b);setTimeout(function(){b.remove()},1600)}
- document.addEventListener('pointerdown',function(e){if(e.target.closest('button,a,input,textarea,select,label,[role="button"]'))return;bloom(e.clientX,e.clientY);},{passive:true});
- var night=false,mode=document.getElementById('magic-daynight');mode.addEventListener('click',function(){night=!night;document.body.classList.toggle('magic-night',night);mode.textContent=night?'☀️ Trở về ban ngày':'🌙 Bật chế độ đêm';});
- var finale=document.getElementById('magic-ending');document.getElementById('magic-finale').addEventListener('click',function(){finale.classList.add('open');});document.getElementById('magic-close-finale').addEventListener('click',function(){finale.classList.remove('open');});finale.addEventListener('click',function(e){if(e.target===finale)finale.classList.remove('open')});document.addEventListener('keydown',function(e){if(e.key==='Escape')finale.classList.remove('open')});
 })();
 </script>
 
